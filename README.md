@@ -14,6 +14,19 @@
    @tailwind components;
    @tailwind utilities;
 
+- 3. Header
+- Login form
+- sign up form
+- routing
+- form Validation
+- UseRef Hook
+- firebase setup 
+- firebase deployement
+- create signup User Account
+- Implement SignIn user api firebase
+- Implement SignOut using firebase signout
+- Update Profile using firebase
+
 # Features
 - login/signUp
     - Login / signUP page
