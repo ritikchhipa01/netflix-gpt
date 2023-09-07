@@ -26,7 +26,27 @@
 - Implement SignIn user api firebase
 - Implement SignOut using firebase signout
 - Update Profile using firebase
-
+- Bugfix: signup user displayName and profile picture update
+= Bugfix: if the user not loggedIn redirect /browse to login page
+- Unsubscribed onStatechanged call back
+- add hardcorded value in constant.js file
+- Register for TMDB and get access token & make an app
+- Get Data from TMDB now playing movie list
+- Custom Hook for Now Playing Movies
+- Create movieSlice
+- Update Store with Movie Data
+- Planning for Maincontainer & Secondary Container
+- Fetch Data for Trailer Video
+- Update Store with trailer Video Data 
+- In mainContainer (videoBackground, VideoTitle)Embedded the Youtube Video and make it autoplay and mute
+- Tailwind Calsses to make mmain Container look Great 
+- Build Secondary Component (MovieList > MovieCard)
+- Build Movie List
+- Build Movie Card
+- TMDB Image CDN Url
+- Made the browser page amazing with Tailwind Css
+- remove the scrollbars 
+- usePopularMoives Custom Hooks
 # Features
 - login/signUp
     - Login / signUP page

@@ -1,17 +1,15 @@
 import Header from './Header';
 import React, { useRef, useState } from 'react'
-import {useNavigate } from 'react-router-dom';
-
 import "../App.css";
 import { Validate } from '../utils/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../utils/firebase';
 import { addUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
+import { User_Avatar } from '../utils/constant';
 
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const email = useRef(null);
   const password = useRef(null);
@@ -30,44 +28,43 @@ const Login = () => {
       )
         .then((userCredentials) => {
           const user = userCredentials.user;
+
           updateProfile(auth.currentUser, {
-            displayName: displayName.current.value, photoURL: "https://avatars.githubusercontent.com/u/86508543?v=4"
+            displayName: displayName.current.value, photoURL: User_Avatar
           }).then(() => {
-           const {uid, email, displayName,photoURL} =auth.currentUser;
-           dispatch(
-            addUser({
-            uid,
-            email,
-            displayName,
-            photoURL
-            }));
-            navigate("/browse");
+            const { uid, email, displayName, photoURL } = auth.currentUser;
+            dispatch(
+              addUser({
+                uid,
+                email,
+                displayName,
+                photoURL
+              }));
+
           }).catch((error) => {
             // An error occurred
             // ...
           });
-          
+
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.Message;
           seterrorMessage(errorCode + " " + errorMessage);
         });
-        
+
     }
     else {
       //sign IN 
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredentials) => {
           const user = userCredentials.user;
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           seterrorMessage(errorCode + " " + errorMessage)
         })
-        navigate("/browse");
     }
   }
 
