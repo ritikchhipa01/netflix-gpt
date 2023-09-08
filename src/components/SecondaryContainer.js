@@ -5,6 +5,11 @@ import { useSelector } from 'react-redux'
 const SecondaryContainer = () => {
   const movie = useSelector((store) => store.movies?.nowPlayingMovies);
   const popularMovie = useSelector((store) => store.movies?.popularMovies);
+  const TopRatedMovies = useSelector((store) => store.movies?.topRatedMovies);
+  const upcomingMovies = useSelector((store) => store.movies?.upComingMovies);
+  const TrendingMovies = useSelector((store) => store.movies?.trendingMovies);
+  console.log(TrendingMovies);
+  console.log(upcomingMovies);
   console.log(popularMovie)
   // console.log(movie);
   return movie && (
@@ -12,8 +17,9 @@ const SecondaryContainer = () => {
       <div className=" -mt-52 pl-6 relative z-[100]">
         <MovieList title={"Now Playing"} movies={movie} />
         <MovieList title={"Popular"} movies={popularMovie} />
-        <MovieList title={"Top Rated"} movies={movie} />
-        <MovieList title={"Trending"} movies={movie} />
+        <MovieList title={"Top Rated"} movies={TopRatedMovies} />
+        <MovieList title={"Upcoming Movies"} movies={upcomingMovies} />
+        <MovieList title={"Trending"} movies={TrendingMovies} />
       </div>
     </div>
   )
