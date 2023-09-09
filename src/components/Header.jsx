@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO } from '../utils/constant';
+import { toggleGptSearchView } from '../utils/gptSlice';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -42,6 +43,11 @@ const Header = () => {
         });
 
     }
+    
+    const handleGptSearch = () => {
+        dispatch(toggleGptSearchView());
+    }
+
     return (
         <div className=' w-screen bg-gradient-to-b from-black flex justify-between absolute z-[100]'>
             <img
@@ -50,7 +56,10 @@ const Header = () => {
                 alt='netflix_logo'
             />
             {user !== null && <div className='flex gap-5 items-center mr-10'>
-                <img className='w-[30px] '
+                <button className='px-4 py-2 bg-yellow-500 rounded-sm' onClick={handleGptSearch}>
+                GPT Search
+                </button>
+                <img className='w-[38px] '
                     src={auth.currentUser.photoURL}
                     alt='avatar'
                 />

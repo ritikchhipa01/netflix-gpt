@@ -7,6 +7,9 @@ import { usePopularMovies } from '../hooks/usePopularMovies';
 import { useTopRated } from '../hooks/useTopRated';
 import { useUpcomingMovies } from '../hooks/useUpcomingMovies';
 import { useTrendingMovies } from '../hooks/useTrendingMovies';
+import { useSelector } from 'react-redux';
+import GptSearch from './GptSearch';
+
 
 const Browse = () => {
 
@@ -15,12 +18,19 @@ const Browse = () => {
   useTopRated();
   useUpcomingMovies();
   useTrendingMovies();
-
+  const gptIsEnable = useSelector(store => store.gpt.showGpt);
+  
   return (
     <div>
       <Header />
+      {gptIsEnable ? (<GptSearch/>) :(
+      <>
       <MainContainer/>
       <SecondaryContainer/>
+      </>
+      )
+      }
+      
       {/* 
        MainContainer
          -VideoBackground
