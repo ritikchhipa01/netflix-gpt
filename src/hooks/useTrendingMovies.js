@@ -10,7 +10,7 @@ export const useTrendingMovies = () => {
   const getTrendingMovies = async () => {
     const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?&page=1', API_OPTIONS)
     const data = await response.json();
-    // console.log(data.results)
+   
     dispatch(addTrendingMovies(await data.results));
   };
 

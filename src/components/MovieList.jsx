@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
   if(!movies) return;
-  // console.log(movies[0]?.poster_path);
+  
   return (
     <div className="px-6">
         <h1 className="text-white py-4 text-2xl">{title}</h1>
