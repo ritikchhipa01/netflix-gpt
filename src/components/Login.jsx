@@ -84,7 +84,7 @@ const Login = () => {
       </div>
 
       <form onSubmit={(e) => e.preventDefault()}
-        className='relative p-12 bg-black/80 rounded-md  flex flex-col justify-center items-center w-[30%]'>
+        className='relative p-12 bg-black/80 rounded-md  flex flex-col justify-center items-center w-[90vw]  md:w-[30%]'>
         <h1 className='text-white self-start text-3xl font-semibold'>{isSignIn ? "Sign In" : "Sign Up"} </h1>
 
         {!isSignIn &&

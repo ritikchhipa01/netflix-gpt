@@ -9,6 +9,7 @@ import { useUpcomingMovies } from '../hooks/useUpcomingMovies';
 import { useTrendingMovies } from '../hooks/useTrendingMovies';
 import { useSelector } from 'react-redux';
 import GptSearch from './GptSearch';
+import useAzureTranslatorApi from '../hooks/useAzureTranslatorApi';
 
 
 const Browse = () => {
@@ -18,27 +19,22 @@ const Browse = () => {
   useTopRated();
   useUpcomingMovies();
   useTrendingMovies();
-  const gptIsEnable = useSelector(store => store.gpt.showGpt);
-  
+  useAzureTranslatorApi();
+  let gptIsEnable = useSelector(store => store.gpt.showGpt);
+
   return (
-    <div>
+    <div className='bg-black'>
       <Header />
-      {gptIsEnable ? (<GptSearch/>) :(
-      <>
-      <MainContainer/>
-      <SecondaryContainer/>
-      </>
-      )
+      {gptIsEnable ?
+        (<GptSearch />)
+        :
+        (
+          <>
+            <MainContainer />
+            <SecondaryContainer />
+          </>
+        )
       }
-      
-      {/* 
-       MainContainer
-         -VideoBackground
-         -videoTitle
-       SecondaryContainer
-         -MovieArray * N
-            -MovieCards * N
-       */}
     </div>
   )
 }

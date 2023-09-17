@@ -47,6 +47,14 @@
 - Made the browser page amazing with Tailwind Css
 - remove the scrollbars 
 - usePopularMoives Custom Hooks
+- Add Gpt Search and searchbar
+- use OPEN AI GPT Api for movie suggestions 
+- rendered suggested top 5 moive 
+- use Azure Translator Api for Multilingual feature 
+- Applied Multilingual feature 
+- Make App Responsive 
+
+
 # Features
 - login/signUp
     - Login / signUP page

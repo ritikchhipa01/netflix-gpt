@@ -1,9 +1,9 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
 const gptSlice = createSlice({
-    name : "gptSlic",
+    name : "gptSlice",
     initialState : {
-         showGpt : null,
+         showGpt : false,
          movieName : null,
          moviesResult : null,
     },
