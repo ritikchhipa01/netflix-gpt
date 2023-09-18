@@ -39,7 +39,7 @@ const useAzureTCustom = () => {
 
         const result = response.data[0].translations[0].text;
         dispatch(addTitle(result));
-        // console.log(response.data[0].translations[0].text)
+       
 
     })
 }

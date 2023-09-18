@@ -25,7 +25,7 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearch = async () => {
-    // console.log(searchText.current.value);
+    
 
     const gptQuery =
       "Act as a Movie recommandation system and suggest some movie for the query :" +
@@ -37,7 +37,7 @@ const GptSearchBar = () => {
       model: "gpt-3.5-turbo",
     });
 
-    // console.log(gptSearchResults.choices?.[0]?.message?.content.split(","));
+    
     const gptMovies =
       gptSearchResults.choices?.[0]?.message?.content.split(",");
     //['Chupke Chupke', ' Angoor', ' Jaane Bhi Do Yaaro', ' Chalti Ka Naam Gaadi', ' Gol Maal']

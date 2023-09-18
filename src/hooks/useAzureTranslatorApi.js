@@ -41,7 +41,7 @@ const useAzureTranslatorApi = () => {
 
         const result = response.data[0].translations[0].text.split(",");
         dispatch(addtranslatedText(result));
-        console.log(response.data[0].translations[0].text.split(","))
+        
 
     })
 }

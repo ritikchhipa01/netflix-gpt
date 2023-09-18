@@ -10,7 +10,7 @@ const SecondaryContainer = () => {
   const TrendingMovies = useSelector((store) => store.movies?.trendingMovies);
 
   const translatedText = useSelector((store) => store.txt.translatedText);
-  // console.log(translatedText)
+ 
 
   return movie && (
     <div className='bg-black '>

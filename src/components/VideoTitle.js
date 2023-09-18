@@ -12,7 +12,7 @@ const VideoTitle = ({ title, overview, movieId }) => {
     const translatedText = useSelector((store) => store.txt.translatedText);
     const storeTitle = useSelector(store => store.movies.movieTitle)
     const storeOverview = useSelector(store => store.movies.movieOverview)
-    // console.log(title)
+    
     if (!storeTitle) dispatch(addMovieTitle(title));
     if (!storeOverview) dispatch(addMovieOverview(overview));
     useAzureTCustom();
