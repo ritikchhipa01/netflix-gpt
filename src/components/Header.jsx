@@ -38,7 +38,7 @@ const Header = () => {
 
     const user = useSelector((store) => store.user);
     const translatedText = useSelector((store) => store.txt.translatedText);
-
+    
     const handleSignOut = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
@@ -66,7 +66,7 @@ const Header = () => {
             />
             {user !== null && <div className='flex gap-[2vw] md:gap-4  items-center md:pr-6 '>
 
-                <select id='select1' onChange={handleSelect} className=' outline-none px-4 py-1 text-black font-medium rounded-sm md:py-2 w-24 md:w-32'>
+                {/* <select id='select1' onChange={() =>handleSelect} className=' outline-none px-4 py-1 text-black font-medium rounded-sm md:py-2 w-24 md:w-32'>
                     <option value="af">Afrikaans</option>
                     <option value="sq">Albanian</option>
                     <option value="am">Amharic</option>
@@ -192,9 +192,13 @@ const Header = () => {
                     <option value="yo">Yoruba</option>
                     <option value="yua">Yucatec Maya</option>
                     <option value="zu">Zulu</option>
-                </select>
+                </select> */}
                 <button className='hidden md:block md:px-4 py-2 md:bg-red-500 md:text-white md:rounded-sm' onClick={handleGptSearch}>
-                    {translatedText && (!showGpt ? translatedText ? translatedText[6] : "GPT Search" : translatedText ? translatedText[11] : "Home")}
+                   { translatedText ? 
+                    `${ (!showGpt ? translatedText ? translatedText[6] : "GPT Search" : translatedText ? translatedText[11] : "Home")}`
+                    :
+                    "Home"
+                   }
                     
                 </button>
                 <button className='px-4 py-2 bg-red-500 text-white rounded-md md:hidden' onClick={handleGptSearch}>

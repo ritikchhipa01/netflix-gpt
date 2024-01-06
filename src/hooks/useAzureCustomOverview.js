@@ -10,7 +10,7 @@ const useAzureTCustomOverview = () => {
     let lang = useSelector((store) => store.txt.language);
 
     let key = process.env.REACT_APP_AZUREKEY;
-    let endpoint = "https://api.cognitive.microsofttranslator.com";
+    let endpoint = "https://netflixgpt.cognitiveservices.azure.com/";
 
     // location, also known as region.
     // required if you're using a multi-service or regional (not global) resource. It can be found in the Azure portal on the Keys and Endpoint page.
@@ -32,14 +32,16 @@ const useAzureTCustomOverview = () => {
             'to': [lang]
         },
         data: [{
-            'text': text
+            'text': text 
         }],
         responseType: 'json'
     }).then(function (response) {
-
+        console.log(response);
         const result = response.data[0].translations[0].text;
         dispatch(addOverview(result));
     })
 }
 
 export default useAzureTCustomOverview;
+
+

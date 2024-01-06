@@ -19,7 +19,7 @@ const Browse = () => {
   useTopRated();
   useUpcomingMovies();
   useTrendingMovies();
-  useAzureTranslatorApi();
+  // useAzureTranslatorApi();
   let gptIsEnable = useSelector(store => store.gpt.showGpt);
 
   return (

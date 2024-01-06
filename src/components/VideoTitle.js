@@ -15,8 +15,8 @@ const VideoTitle = ({ title, overview, movieId }) => {
     
     if (!storeTitle) dispatch(addMovieTitle(title));
     if (!storeOverview) dispatch(addMovieOverview(overview));
-    useAzureTCustom();
-    useAzureTCustomOverview();
+    // useAzureTCustom();
+    // useAzureTCustomOverview();
 
 
     const newTitle = useSelector(store => store.txt.title);

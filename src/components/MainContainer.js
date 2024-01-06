@@ -2,9 +2,11 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import VideoTitle from './VideoTitle';
 import VideoBackground from './VideoBackground';
+import { useTrailerVideo } from '../hooks/useTrailerVideo';
 
 
 const MainContainer = () => {
+  
 
   // const MovieCategory =  ["nowPlayingMovies", "popularMovies",  "trailerVideo", "topRatedMovies",  "upComingMovies",  "trendingMovies"];
   function randomNumber(min, max) {
@@ -20,7 +22,6 @@ const MainContainer = () => {
   const randomValue = randomNumber(0, movies.length);
 
   const mainMovie = movies[randomValue];
-
 
 
 
